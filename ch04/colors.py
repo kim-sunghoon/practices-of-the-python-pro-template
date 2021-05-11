@@ -1,7 +1,10 @@
 # Loading all colors into memory at once
+import os
+from pathlib import Path
+FILE_DIR = Path(os.path.dirname(__file__))
 color_counts = {}
 
-with open('all-favorite-colors.txt') as favorite_colors_file:
+with open(os.path.join(FILE_DIR, 'all-favorite-colors.txt'), 'r') as favorite_colors_file:
     favorite_colors = favorite_colors_file.read().splitlines()  # <1>
 
 for color in favorite_colors:
